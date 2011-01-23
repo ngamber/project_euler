@@ -42,4 +42,4 @@ until integers[prime_index]**2 > integers[-1]
 end
 
 answer = primes | factors
-puts "The answer is: ",answer
+puts "The answer is: ",answer[-1]
