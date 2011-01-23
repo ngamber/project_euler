@@ -13,7 +13,7 @@ def triplet_check(a,b,c)
 end
 
 
-(1..500).each do |k|
+(1..425).each do |k|   #the highest value of c is trivial to solve...
 	(2..k).each do |j|
 		(3..j).each do |i|
 			if i + j + k == 1000
