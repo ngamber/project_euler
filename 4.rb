@@ -1,6 +1,5 @@
 #!/usr/bin/ruby
 
-#ceiling = 998001
 
 x = Array.new
 for i in (100..999)
