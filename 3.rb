@@ -7,7 +7,7 @@ number = 600851475143
 factors = Array.new
 
 i = 1
-while i < number/2
+while i <= number/2 # no factor of a number will be greater than half of the number... there's some additional juju to extend that statement to be a bit more useful, but I haven't the sauce at the moment
 	if number%i == 0
 #		puts i," is a factor of ",number
 		factors << i
