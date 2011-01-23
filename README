@@ -2,5 +2,4 @@ This is where I'm tracking my finished, unpolished, or completely broken apps fo
 the problems at http://projecteuler.net. For now, it's a learning exercise in ruby, and a 
 way of relearning myself some maths. Shit will probably look stupid. 
 
-As a note to myself: the useful shit that should probably be broken out into a reusable library of functions 
-is mainly in 3.rb, for now.
+note: the eratosthenes and euler sieves are in 003 and 007, respectively.
