@@ -1,5 +1,7 @@
 #!/usr/bin/ruby
 
+#BTW, this shit takes forever to run, my factorization is balls slow :(
+
 number = 600851475143
 
 factors = Array.new
