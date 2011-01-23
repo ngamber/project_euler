@@ -12,6 +12,7 @@ def triplet_check(a,b,c)
 	end
 end
 
+#it's much less expensive, computationally, to do the check of the sum before the check of the sum of the squares. 
 
 (1..425).each do |k|   #the highest value of c is trivial to solve...
 	(2..k).each do |j|
