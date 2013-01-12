@@ -4,16 +4,42 @@ array = Array.new
 IO.foreach('011.txt') { |line|
 #	puts line
 	subarray=Array.new
-	subarray.push(line.split(' ').to_int)
-	array.push(subarray.flatten)
-}
+	subarray.push(line.split(' '))
+	array.push(subarray.flatten.collect{ |s| s.to_i})
+	}
 
 product_length = 4
 size = array.size
-product_biggest = 0
+maxProduct = 0
 
-j=0
-while j < size{
-	i = 0
-	while i <= size-product_length{
-	if array[j][i]*array[j][i+1]*array[j][i+2]*array[j][i+3] < 
+# horizontal check
+
+x=0
+while x < size
+	y = 0
+	while y <= size-product_length
+		product = array[x][y]*array[x][y+1]*array[x][y+2]*array[x][y+3]
+		if product > maxProduct
+			maxProduct = product	
+		end
+		y += 1
+	end
+	x += 1
+end
+
+puts "Max horizontal product: ",maxProduct
+
+x=0
+while x < size 
+        y = 0
+        while y <= size-product_length 
+                product = array[y][x]*array[y+1][x]*array[y+2][x]*array[y+3][x]
+                if product > maxProduct
+                        maxProduct = product
+                end
+                y += 1
+        end
+        x += 1
+end
+
+puts "Max vertical product: ",maxProduct
