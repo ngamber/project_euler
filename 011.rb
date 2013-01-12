@@ -11,7 +11,9 @@ IO.foreach('011.txt') { |line|
 product_length = 4
 size = array.size
 maxProduct = 0
-
+maxHorizontal = 0
+maxVertical = 0
+maxForwardDiag = 0
 # horizontal check
 
 x=0
@@ -19,27 +21,48 @@ while x < size
 	y = 0
 	while y <= size-product_length
 		product = array[x][y]*array[x][y+1]*array[x][y+2]*array[x][y+3]
-		if product > maxProduct
-			maxProduct = product	
+		if product > maxHorizontal
+			maxHorizontal = product	
 		end
 		y += 1
 	end
 	x += 1
 end
 
-puts "Max horizontal product: ",maxProduct
+puts "Max horizontal product: ",maxHorizontal
+
+# vertical check
 
 x=0
 while x < size 
         y = 0
         while y <= size-product_length 
                 product = array[y][x]*array[y+1][x]*array[y+2][x]*array[y+3][x]
-                if product > maxProduct
-                        maxProduct = product
+                if product > maxVertical
+                        maxVertical = product
                 end
                 y += 1
         end
         x += 1
 end
 
-puts "Max vertical product: ",maxProduct
+puts "Max vertical product: ",maxVertical
+
+# Forward slash "\" check
+
+x = 0
+y = 3
+
+while x <= size-product_length
+	while y < size
+		product = array[y][x]*array[y+1][x+1]*array[y+2][x+2]*array[y+3][x+3]
+		if product > maxForwardDiag
+			maxForwardDiag = product
+		end
+		y += 1
+	end
+	x += 1
+end	
+	
+puts "Max vertical product: ",maxForwardDiag
+
