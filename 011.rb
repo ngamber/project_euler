@@ -14,6 +14,7 @@ maxProduct = 0
 maxHorizontal = 0
 maxVertical = 0
 maxForwardDiag = 0
+maxBackwardDiag = 0
 # horizontal check
 
 x=0
@@ -51,10 +52,10 @@ puts "Max vertical product: ",maxVertical
 # Forward slash "\" check
 
 x = 0
-y = 3
+y = 0
 
 while x <= size-product_length
-	while y < size
+	while y <= size-product_length
 		product = array[y][x]*array[y+1][x+1]*array[y+2][x+2]*array[y+3][x+3]
 		if product > maxForwardDiag
 			maxForwardDiag = product
@@ -64,5 +65,23 @@ while x <= size-product_length
 	x += 1
 end	
 	
-puts "Max vertical product: ",maxForwardDiag
+puts "Max forward diagonal product: ",maxForwardDiag
 
+
+# back diagonal "/" product
+
+x = product_length-1
+y = 0 
+
+while x < product_length
+	while y <= size-product_length
+		product = array[y][x]*array[y-1][x-1]*array[y-2][x-2]*array[y-3][x-3]
+		if product > maxBackwardDiag
+			maxBackwardDiag = product
+		end
+		y += 1
+	end
+	x += 1
+end
+
+puts "Max backward diagonal product: ",maxBackwardDiag
